@@ -103,7 +103,7 @@ laminationsPerPacket: 5,
   const [activeTab, setActiveTab] = useState('design');
 const [currentStep, setCurrentStep] = useState(1);
 const [aiResult, setAiResult] = useState('');
-const [aiSuggestions, setAiSuggestions] = useState<any[]>([]);
+const [aiSuggestions, setAiSuggestions] = useState([]);
 const [aiLoading, setAiLoading] = useState(false);
 const [wOverrides, setWOverrides] = useState<{ [key: string]: number }>({});
 
