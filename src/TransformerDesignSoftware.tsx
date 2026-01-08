@@ -1707,11 +1707,12 @@ const analyzeWithAI = async () => {
     setAiLoading(true);
     setAiSuggestions([]);
 
-    const response = await fetch('http://localhost:5000/analyze-transformer', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(aiPayload)
-    });
+    // This tells the frontend to use the Cloud URL provided by Vercel
+const response = await fetch(`${import.meta.env.VITE_API_URL}/analyze-transformer`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(aiPayload)
+});
 
     const result = await response.json();
     setAiSuggestions(result.suggestions || []);
